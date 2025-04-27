@@ -27,7 +27,9 @@ class UserSerializer(serializers.ModelSerializer):
 
         for field, message in required_fields.items():
             if not data.get(field):
-                raise CustomValidationError(detail=message, code="validation_error")
+                raise CustomValidationError(
+                    detail={"result": False, "msg": "test"}, code="validation_error"
+                )
 
         return data
 

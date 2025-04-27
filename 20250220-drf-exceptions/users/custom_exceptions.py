@@ -9,7 +9,7 @@ class CustomValidationError(APIException):
 
     def __init__(self, detail=None, code=None):
         if detail:
-            self.default_detail["msg"] = detail
+            self.default_detail = detail
         self.detail = self.default_detail
         if code is None:
             code = self.default_code
